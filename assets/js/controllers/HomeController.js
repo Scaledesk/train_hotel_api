@@ -18,7 +18,6 @@ angular.module('Traveller')
             if(query.length < 3) return [];
             $scope.destinations = $filter('filter')($scope.master_stations,{name:query})
         };
-
         $scope.search =function(formData){
             var source = $scope.source.selected.code;
             var dest = $scope.destination.selected.code;
