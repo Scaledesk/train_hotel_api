@@ -2,7 +2,7 @@
 
 .bg-holder { 
     background-image: url("/assets/theme/img/background.jpg") !important;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 
 
