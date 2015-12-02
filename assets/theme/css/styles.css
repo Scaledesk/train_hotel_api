@@ -1904,6 +1904,8 @@ body {
 .bg-holder {
   position: relative;
   overflow: hidden;
+   
+    
 }
 .bg-holder > .bg-mask,
 .bg-holder > .bg-blur,
@@ -10953,3 +10955,7 @@ img.mfp-img {
   -moz-box-sizing: content-box;
   box-sizing: content-box;
 }
+
+
+
+
