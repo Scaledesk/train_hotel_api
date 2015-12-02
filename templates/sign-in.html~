@@ -1,0 +1,100 @@
+
+
+<div  class="zolo-inner">
+  <br>
+  <br>
+
+  <br>
+  <br>
+  <br>
+
+  <div class="container">
+    <br><br><br>
+
+
+
+
+
+
+    <div class="row  zolo-center">
+      <div ng-show="account_activated">
+        Your account has been verified please login to continue
+      </div>
+
+      <div class="col-md-4 col-md-offset-4">
+        <div class="row">
+          <div class="col-md-12 zolo-white-bg"  >
+            <h3 class="font-lato-heading">Login With Zolo</h3>
+
+            <h6 class="font-lato-heading-sub">Get Things Done !</h6>
+
+
+            <div ng-show="error">Email or Password incorrect.</div>
+
+
+
+
+
+
+            <div class="input-group m-b-sm zolo-m-n-15" >
+                                                    <span class="input-group-addon" id="basic-addon1"><!-- Login As User icon by Icons8 -->
+<!-- MS Outlook icon by Icons8 -->
+<!-- Message icon by Icons8 -->
+<img class="icon icons8-Message" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAABp0lEQVRIS72V4XHCMAyFJXuA0gnaTlCdvQDdgBHCBjBB0w3oBNAN6ASwQFyzAUzQLmCrJ87hTEqOg5LkXy6JPr2nJwehhwt7YEA/EGNMCQDcpSK01jIzv3UFQcTXPSSEcO+9/7k1iIgGWuvvPQQAfAjh5ZagBFgBAOV2jWKMhffe/1cREZHWes7Mnwe7qqpCY0yBiLMQwvA/IAEopUTB1Dm3EKf2SgQi3RPRUCm1AIBSXrhUUdboyHu/lu//QBJIpK6ZeXIJyBgzQcSy6cRJSAINlFLSyZdzbnxOkbV2wcwUYxSrj1LaCmmCYozTU8lLCZIBP50CtNpVdy3+ymwAYIuId82IZxHdiYq2ObYqMcbMAGBYRzodPUW6X6eAzAHgwzlXpkRJUFbOuWlu76l0yYZK/HYhBNmZg7/W2hEzl4j4zMwbGXJVVcu6YFImoIdc9REky/e7dHdu2G3PRTUiTuqUHSDMPJZFBIAi7+5akNiptV7KGiDivD5WNjFGWaDttYWb3xHRo1JqKfb2dwrLQG+loFlHAiIHY2eAGtjPP74rm/K6vSj5BaM+MGxWG0KbAAAAAElFTkSuQmCC" width="18" height="18"></span>
+              <input ng-model="email" type="text" class="form-control" placeholder="Enter Your Email" aria-describedby="basic-addon1">
+            </div>
+
+
+
+
+            <div class="input-group m-b-sm zolo-m-n-15" >
+                                                    <span class="input-group-addon" id="basic-addon1"><!-- Login As User icon by Icons8 -->
+
+<img class="icon icons8-Key" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAACOklEQVRIS7WW/3UTMQzHJXkAwgTtBnXsAQgTNN0gnYAwAd2gYQLCBKQbZAH7mQkaNjgGsMRTny/PXC/3g0fvXzv6SPrKXwXhHz5r7TURfULEFQDYEiKJyJGZv6aUTnVYnMtwzu0QcSMiO2Y+pJSSxrDWWiJaI+JWRL7FGD+3sWdBnHMJEVPOeZtSarz3axG50WDMrLwna+3CGLMDgJsQwlLPJkNKBYsQwqZk/QMAfgPAEQAaAFgDwDtmvlOa934vIk2McTsJohoYY7SCa83MGHMSkb0GqNttrV0ZYw45Z9XqpPdyznYSRKvQbGOMD1X/D8y8bjVpYaWFDzFG65zT+4upkMTMmzpgaVkvSLVjZq2yIaL9JIj3XkIIr+5eApXKU4xxr7+dDMk5v9eJ6o58H6iIfpwFcc6dSrt0kl59XVB7f1a7usIPgQBAR/vjLOHbLBFxoSPc17IWqneNMcd2hInomZmXg5rUbSCiDSJehRDuhqxIX3xxg/HH2CdosZXnnPP9pYoUQkSPALDUll20lRqgl4hoFWPUBwmVQT4y81PHIG8BQN/H99oNBme/AP56cG0CAHAAgBUivhikiPxUH2Pm3aDV91RwBqgvEdEHALjvs5Mhnc6VDAFKm9SHVmoXXb8a20kvkLeq4Ly03rKCM8R735THo1PUK/JcDbrtQ3XJnPOyBugeQMQvuvk0gbka9EJE5FedbVk20C6pMWHHzrWSRkS2astjW28s2KVzbE1N/wSUS/+lRTXwD8wv7tGYm4yTAAAAAElFTkSuQmCC" width="18" height="18"></span>
+              <input ng-model="password" type="text" class="form-control" placeholder="Enter Your Password" aria-describedby="basic-addon1">
+            </div>
+
+
+
+
+
+            <button ng-click="login()" type="button" class="btn btn-primary zolo-signup-button" ><h4 class="zolo-signup-text">Login</h4></button>
+
+
+
+
+            <p class="zolo-p-12 zolo-p-t-15" > or connect with</p>
+
+            <div class="row">
+              <div class="col-md-6 zolo-center">
+                <img ng-click="authenticate('facebook')" src="../assets/images/f-connect.png">
+              </div>
+              <div class="col-md-6 zolo-center">
+                <img ng-click="authenticate('google')" src="../assets/images/g-connect.png">
+              </div>
+            </div>
+            <br>
+          </div>
+
+          <div class="col-md-12 zolo-grey-panel">
+
+
+            <p Class="zolo-grey-panel-p"> Dont Have an Account?<span class="zolo-purple"><strong> SignUp Here</strong></span> </p>
+
+
+
+          </div>
+
+
+
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+</div>
+  </div>
+    <br>
