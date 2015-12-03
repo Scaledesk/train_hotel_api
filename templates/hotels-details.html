@@ -1,0 +1,27 @@
+
+
+<button class="btn-default" ng-click="searchHotels()">Search Hotels</button>
+
+<div class="row">
+
+    <div class="col-md-10" ng-repeat="hotel in hotels.data.HotelSearchResults.Hotels">
+       <pre>
+        {{hotel.Name}}
+           <span ng-repeat="media in hotel.PropertyInfo.MediaList">
+               <img src="{{media.src}}" width="50" height="50"><br/><br/>
+           </span>
+           <div class="col-md-12" ng-repeat="h in hotel.PropertyInfo.RoomStays">
+                {{h.RoomTypes}}<br/>
+               {{h.RatePlans}}<br/>
+               {{h.RoomRates}}<br/>
+               {{h.availStatus}}<br/><br/>
+
+           </div>
+           <!--<img ng-src="{{hotel.PropertyInfo.MediaList.src}}" height="150" width="150"/><br/>-->
+           <div>
+           </div>
+           <br/><br/><br/>
+    </pre><br/><br/><br/>
+    </div>
+
+</div>

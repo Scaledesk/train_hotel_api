@@ -2,7 +2,6 @@ angular.module('Traveller')
 // inject the Activation service into our controller
     .controller('SearchController', function(TrainBetweenStation,  $http, StationCode, $scope,$routeParams,$filter, $location) {
 
-
         $scope.checkboxModel = {
 
         };

@@ -1,0 +1,487 @@
+
+<div class="container">
+    <ul class="breadcrumb">
+        <li><a href="index.html">Home</a>
+        </li>
+        <li><a href="#">United States</a>
+        </li>
+        <li><a href="#">New York (NY)</a>
+        </li>
+        <li><a href="#">New York City</a>
+        </li>
+        <li class="active">New York City Flights</li>
+    </ul>
+    <div class="mfp-with-anim mfp-hide mfp-dialog mfp-search-dialog" id="search-dialog">
+        <h3>Search for Flight</h3>
+        <form>
+            <div class="tabbable">
+                <ul class="nav nav-pills nav-sm nav-no-br mb10" id="flightChooseTab">
+                    <li class="active"><a href="#flight-search-1" data-toggle="tab">Round Trip</a>
+                    </li>
+                    <li><a href="#flight-search-2" data-toggle="tab">One Way</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="flight-search-1">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon input-icon-highlight"></i>
+                                    <label>From</label>
+                                    <input class="typeahead form-control" placeholder="City, Airport or U.S. Zip Code" type="text" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon input-icon-highlight"></i>
+                                    <label>To</label>
+                                    <input class="typeahead form-control" placeholder="City, Airport or U.S. Zip Code" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-daterange" data-date-format="MM d, D">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                        <label>Departing</label>
+                                        <input class="form-control" name="start" type="text" />
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
+                                        <label>Returning</label>
+                                        <input class="form-control" name="end" type="text" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group form-group-lg form-group-select-plus">
+                                        <label>Passengers</label>
+                                        <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                                            <label class="btn btn-primary active">
+                                                <input type="radio" name="options" />1</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" name="options" />2</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" name="options" />3</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" name="options" />4</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" name="options" />5</label>
+                                            <label class="btn btn-primary">
+                                                <input type="radio" name="options" />5+</label>
+                                        </div>
+                                        <select class="form-control hidden">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option selected="selected">6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                            <option>13</option>
+                                            <option>14</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="flight-search-2">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon input-icon-highlight"></i>
+                                    <label>From</label>
+                                    <input class="typeahead form-control" placeholder="City, Airport or U.S. Zip Code" type="text" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-map-marker input-icon input-icon-highlight"></i>
+                                    <label>To</label>
+                                    <input class="typeahead form-control" placeholder="City, Airport or U.S. Zip Code" type="text" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-hightlight"></i>
+                                    <label>Departing</label>
+                                    <input class="date-pick form-control" data-date-format="MM d, D" type="text" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group form-group-lg form-group-select-plus">
+                                    <label>Passengers</label>
+                                    <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                                        <label class="btn btn-primary active">
+                                            <input type="radio" name="options" />1</label>
+                                        <label class="btn btn-primary">
+                                            <input type="radio" name="options" />2</label>
+                                        <label class="btn btn-primary">
+                                            <input type="radio" name="options" />3</label>
+                                        <label class="btn btn-primary">
+                                            <input type="radio" name="options" />4</label>
+                                        <label class="btn btn-primary">
+                                            <input type="radio" name="options" />5</label>
+                                        <label class="btn btn-primary">
+                                            <input type="radio" name="options" />5+</label>
+                                    </div>
+                                    <select class="form-control hidden">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
+                                        <option selected="selected">6</option>
+                                        <option>7</option>
+                                        <option>8</option>
+                                        <option>9</option>
+                                        <option>10</option>
+                                        <option>11</option>
+                                        <option>12</option>
+                                        <option>13</option>
+                                        <option>14</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-lg" type="submit">Search for Flights</button>
+        </form>
+    </div>
+    <h3 class="booking-title">{{total_train}} Trains from {{source.selected.name}} to {{destination.selected.name}} on {{journey_date | date:'medium'}} for {{no_of_passenger}} Passenger <small><a class="popup-text" href="#search-dialog" data-effect="mfp-zoom-out">Change search</a></small></h3>
+    <form class="booking-item-dates-change mb30">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="form-group form-group-icon-left"><i class="fa fa-map-marker input-icon input-icon-hightlight"></i>
+                    <label>From</label>
+
+
+                    <ui-select ng-model="source.selected"
+                               theme="bootstrap"
+                               ng-disabled="disabled"
+                               reset-search-input="false">
+                        <ui-select-match placeholder="Enter source station...">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="source in sources track by $index"
+                                           refresh="refreshSources($select.search)"
+                                           refresh-delay="0">
+                            <div ng-bind-html="source.name | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+                    <!-- <input class="typeahead form-control" ng-model="source_name" placeholder="City..." type="text" />-->
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="form-group form-group-icon-left"><i class="fa fa-map-marker input-icon input-icon-hightlight"></i>
+                    <label>To</label>
+
+
+                    <ui-select ng-model="destination.selected"
+                               theme="bootstrap"
+                               ng-disabled="disabled"
+                               reset-search-input="false">
+                        <ui-select-match placeholder="Enter destination station..">{{$select.selected.name}}</ui-select-match>
+                        <ui-select-choices repeat="destination in destinations track by $index"
+                                           refresh="refreshDestinations($select.search)"
+                                           refresh-delay="0">
+                            <div ng-bind-html="destination.name | highlight: $select.search"></div>
+                        </ui-select-choices>
+                    </ui-select>
+
+
+
+                    <!--<input class="typeahead form-control" ng-model="destination_name" placeholder="City..." type="text" />-->
+                </div>
+            </div>
+            <div class="col-md-2 date-mystyle">
+                <div class="form-group form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-hightlight"></i>
+                    <label>Departing</label>
+                    <input class="date-pick form-control" data-date-format="MM d, D" type="text" ng-model="journey_date" />
+                </div>
+            </div>
+            <div class="col-md-2 date-mystyle">
+                <div class="form-group form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-hightlight"></i>
+                    <label>Returning</label>
+                    <input class="date-pick form-control " data-date-format="MM d, D" type="text" />
+                </div>
+            </div>
+            <div class="col-md-2">
+                <div class="form-group form-group-select-plus">
+                    <label>Passengers</label>
+                    <div class="btn-group btn-group-select-num" data-toggle="buttons">
+                        <label class="btn btn-primary active">
+                            <input type="radio" name="options" />1</label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="options" />2</label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="options" />3</label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="options" />4</label>
+                        <label class="btn btn-primary">
+                            <input type="radio" name="options" />4+</label>
+                    </div>
+                    <select class="form-control hidden">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option selected="selected">5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                        <option>13</option>
+                        <option>14</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="row">
+        <div class="col-md-3">
+            <aside class="booking-filters booking-filters-white">
+                <h3>Filter By:</h3>
+                <ul class="list booking-filters-list">
+                    <li>
+                        <h5 class="booking-filters-title">Stops <small>Price from</small></h5>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" />Non-stop<span class="pull-right">&#8377;215</span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" />1 Stop<span class="pull-right">&#8377;154</span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" />2+ Stops<span class="pull-right">&#8377;197</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="booking-filters-title">Price </h5>
+                        <input type="text" id="price-slider" ng-model="searchText">
+                    </li>
+                    <li>
+                        <h5 class="booking-filters-title">Train Class <small>Price from</small></h5>
+
+
+                        <!--ng-model="checkboxModel.value2"
+                        ng-true-value="'YES'" ng-false-value="'NO'"-->
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" ng-model='checkboxModel' ng-true-value="'FIRST AC'" ng-false-value="''"> First AC
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" ng-model='checkboxModel' ng-true-value="'SECOND AC'" ng-false-value="''" > Second AC
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" ng-model='checkboxModel' ng-true-value="'THIRD AC'" ng-false-value="''"> Third AC
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" ng-model='checkboxModel' ng-true-value="'SLEEPER CLASS'" ng-false-value="''"> Sleeper Class
+                            </label>
+                        </div>
+
+
+
+                        <!--<input type="checkbox" data-ng-model='search.type1' data-ng-true-value='luxury' data-ng-false-value='' />-->
+                        <!--
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input class="i-check" type="checkbox" ng-t  value="FIRST AC"> First AC
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                    <label>
+                                                        <input class="i-check" type="checkbox" checklist-model="fareClass" data-ng-true-valuevalue="SECOND AC" > Second AC
+                                                    </label>
+                                                </div>
+                                                <div class="checkbox">
+                                                <label>
+                                                    <input class="i-check" type="checkbox" checklist-model="fareClass" value="THIRD AC"> Third AC
+                                                </label>
+                                            </div>
+                                                <div class="checkbox">
+                                                <label>
+                                                    <input class="i-check" type="checkbox" checklist-model="fareClass" value="SLEEPER CLASS"> Sleeper Class
+                                                </label>
+                                            </div>-->
+                        {{checkboxModel}}
+
+                        <!--                       <div class="checkbox">
+                                                   <label>
+                                                       <input class="i-check" type="checkbox" ng-model="searchText" />Sleeper<span class="pull-right">&#8377;154</span>
+                                                   </label>
+                                               </div>
+                                               <div class="checkbox">
+                                                   <label>
+                                                       <input class="i-check" type="checkbox" ng-model="searchText" ng-click="searchText='FIRST AC'" />First AC<span class="pull-right">&#8377;316</span>
+                                                   </label>
+                                               </div>
+                                               <div class="checkbox">
+                                                   <label>
+                                                       <input class="i-check" type="checkbox" ng-model="searchText" ng-click="searchText='SECOND AC'" />Second AC<span class="pull-right">&#8377;450</span>
+                                                   </label>
+                                               </div>
+                                               <div class="checkbox">
+                                                   <label>
+                                                       <input class="i-check" type="checkbox" ng-model="searchText" ng-click="searchText='THIRD AC'" />Third AC<span class="pull-right">&#8377;450</span>
+                                                   </label>
+                                               </div>
+
+                       -->
+
+                    </li>
+                    <li>
+                        <h5 class="booking-filters-title">Airlines <small>Price from</small></h5>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" />Lufthansa<span class="pull-right">&#8377;215</span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" />American Airlines<span class="pull-right">&#8377;350</span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" />Airfrance<span class="pull-right">&#8377;154</span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" />Croatia Airlines<span class="pull-right">&#8377;197</span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" />Delta<span class="pull-right">&#8377;264</span>
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" />Air Canada<span class="pull-right">&#8377;445</span>
+                            </label>
+                        </div>
+                    </li>
+                    <li>
+                        <h5 class="booking-filters-title">Departure Time</h5>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" />Morning (5:00a - 11:59a)</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" />Afternoon (12:00p - 5:59p)</label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                <input class="i-check" type="checkbox" />Evening (6:00p - 11:59p)</label>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+
+        <div class="col-md-9 search-tabs search-tabs-bg mb30">
+
+            <div class="tabbable">
+                <ul class="nav nav-tabs" id="myTab">
+                    <li class="active">
+                        <!--<a href="#" data-toggle="tab" ng-click="sortType = 'duration'">
+                            Fastest Option
+                        </a>-->
+                        <a  data-toggle="tab" ng-click="sortType = 'duration'">
+                            Fastest Option
+                        </a>
+                    </li>
+                    <li>
+                        <a  data-toggle="tab" ng-click="sortType = 'fare.fare'; sortReverse = !sortReverse">
+                            Cheapest Option
+                        </a>
+                    </li>
+                    <li>
+                        <a  data-toggle="tab" ng-click="sortType = 'duration'; sortReverse = !sortReverse">
+                            Best/Suggested Option
+                        </a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade in active" id="tab-1">
+                        <div class="booking-item-container">
+
+                            <!--.type1 | filter:checkboxModel.type2 | filter:checkboxModel.type3 | filter:checkboxModel.type4-->
+                            <div class="booking-item">
+                                <div class="row" dir-paginate="result in results | orderBy:sortType:sortReverse | filter:checkboxModel | itemsPerPage: 10">
+                                    <div class="col-md-2">
+                                        <div class="booking-item-airline-logo">
+                                            <img src="assets/theme/img/242px-IRCTC_Logo.svg.png" alt="Image Alternative text" title="Image Title" />
+                                            <p>{{result.train.name}}</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <div class="booking-item-flight-details">
+                                            <div class="booking-item-departure"><i class="fa fa-train"></i>
+                                                <h5>{{result.departure_time}}</h5>
+                                                <p class="booking-item-date">{{result.journey_date | date:'medium'}}</p>
+                                                <p class="booking-item-destination">{{result.source.name}}</p>
+                                            </div>
+                                            <div class="booking-item-arrival"><i class="fa fa-train"></i>
+                                                <h5>{{result.arrival_time}}</h5>
+                                                <p class="booking-item-date">{{result.journey_date}}</p>
+                                                <p class="booking-item-destination">{{result.destination.name}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <h5>{{result.duration}} Hours</h5>
+                                    </div>
+                                    <div class="col-md-3"><span class="booking-item-price">&#8377;{{result.farePrice*result.no_of_passenger}}</span><br/><span>for {{result.no_of_passenger}} person</span>
+                                        <p class="booking-item-flight-class">Class: {{result.fareName}}</p><a class="btn btn-primary" href="#">Select</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <br/><br/>
+                        <div>
+                            <dir-pagination-controls template-url="assets/js/includes/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+                        </div>
+
+
+                    </div>
+                    <div class="tab-pane fade" id="tab-2">
+                        <p class="mt10">At lobortis et porta pulvinar auctor scelerisque ut magna vitae feugiat vestibulum aliquet mi fermentum tempor nisi natoque quam eros torquent leo blandit dui convallis a facilisi fringilla amet nec</p>
+                    </div>
+                    <div class="tab-pane fade" id="tab-3">
+                        <p class="mt10">Sodales porttitor sollicitudin ad porttitor ultricies erat per fusce blandit magna himenaeos pretium sagittis et lobortis feugiat consequat semper sed consequat phasellus sodales primis nam mus natoque bibendum nullam gravida</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="gap"></div>
+</div>
