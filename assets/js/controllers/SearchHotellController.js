@@ -2,25 +2,56 @@ angular.module('Traveller')
 // inject the Activation service into our controller
     .controller('SearchHotelController', function($http, $scope, Hotel,$routeParams,$filter, $location) {
 
-        var dt = '<MMTHotelSearchRequest><POS><Requestor type="B2C" idContext="AFF" id="AFF322603" channel="B2Cweb"/> <Source iSOCurrency="INR"/> </POS> <ResultTransformer> ' +
+        var hotelRequest = '<MMTHotelSearchRequest><POS><Requestor type="B2C" idContext="AFF" id="AFF322603" channel="B2Cweb"/> <Source iSOCurrency="INR"/> </POS> <ResultTransformer> ' +
             '<GuestRecommendationEnabled maxRecommendations="1">true</GuestRecommendationEnabled> ' +
             '<PriceBreakupEnabled>true</PriceBreakupEnabled> <CancellationPolicyRulesReq text="yes"/> ' +
             '</ResultTransformer> <ResultPreferences> <ResultPreference> <Pagination paginate="false" page="1" limit="10"/> </ResultPreference> </ResultPreferences> ' +
             '<SearchCriteria> <Criterion> ' +
             '<Area> <CityCode>DEL</CityCode> <CountryCode>IN</CountryCode> </Area> ' +
+            '<RoomStayCandidates> <RoomStayCandidate> <GuestCounts> <GuestCount count="1" ageQualifyingCode="10"/> </GuestCounts> </RoomStayCandidate> ' +
             '<RoomStayCandidate> <GuestCounts> <GuestCount count="1" ageQualifyingCode="10"/>' +
-            ' <GuestCount count="1" ageQualifyingCode="8"> <Ages> <Age>4</Age> </Ages> </GuestCount> </GuestCounts>' +
-            ' </RoomStayCandidate> </RoomStayCandidates> ' +
+            ' <GuestCount count="1" ageQualifyingCode="8"> <Ages> <Age>4</Age> </Ages> </GuestCount> </GuestCounts> ' +
+            '</RoomStayCandidate> </RoomStayCandidates> ' +
             '<StayDateRanges> <StayDateRange start="2015-12-05" end="2015-12-15"/> </StayDateRanges>' +
-            ' <SupplierCodes> <SupplierCode>EPXX0001</SupplierCode> </SupplierCodes> </Criterion> </SearchCriteria> ' +
-            '</MMTHotelSearchRequest>';
+            ' <SupplierCodes> <SupplierCode>EPXX0001</SupplierCode> </SupplierCodes> </Criterion> </SearchCriteria>' +
+            ' </MMTHotelSearchRequest>';
+
+
+        var getCountryRequest = '<MMTStaticCountrySearchRequest Offset="0" Rows="100">' +
+                '<POS>' +
+                    '<Requestor type="AFF" idContext="AFF" id="AFF322603" channel="AFF"/>' +
+                    '<Source iSOCurrency="INR"/>' +
+                    '<Token>AFF322603</Token>' +
+                '</POS>' +
+            '<RequestCountryParams>' +
+            '</RequestCountryParams>' +
+            '</MMTStaticCountrySearchRequest>';
+
+        var getCityRequest = '<MMTStaticCitySearchRequest Offset="0" Rows="100">' +
+            '<POS>' +
+            '<Requestor type="AFF" idContext="AFF" id="AFF322603" channel="AFF"/>' +
+            '<Source iSOCurrency="INR"/>' +
+            '<Token>AFF322603</Token>' +
+            '</POS>' +
+            '<RequestCityParams>' +
+            '<Country>India</Country>' +
+            '<CountryCode>IN</CountryCode>' +
+            '<Name/>' +
+            '</RequestCityParams>' +
+            '<RequiredFields>' +
+            'country, countryCode' +
+        '</RequiredFields>' +
+        '</MMTStaticCitySearchRequest>';
+
+
+
 
 
 
         $scope.searchHotels = function(){
-            Hotel.search(dt).then(
+            Hotel.search(hotelRequest).then(
                 function(data){
-console.log(data);
+                    console.log(data);
                     $scope.hotels = data;
 
                 },
@@ -29,9 +60,25 @@ console.log(data);
                 });
         };
 
+        $scope.getCountry =function(){
+            Hotel.getCountry(getCountryRequest).then(
+                function(data){
+                    $scope.countries = data;
 
+                },
+                function(data){
+                    // $scope.countries = data;
+                });
+        };
 
+        $scope.getCity =function(){
+            Hotel.getCity(getCityRequest).then(
+                function(data){
+                    $scope.cities = data;
 
-
-
+                },
+                function(data){
+                    // $scope.cities = data;
+                });
+        };
     });

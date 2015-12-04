@@ -10,6 +10,44 @@ angular.module('Traveller').factory('Hotel', function($http) {
                 },
                 data: dt
             });
+        },
+
+        getCountry : function(countryData) {
+            return $http({
+                method: 'POST',
+                url: 'https://apim-gateway.mmtcloud.com/mmt-htlsearch/1.0/staticsearch/v1.0/countryData?responseFormat=json',
+                headers: {
+                    'Content-Type': 'application/xml',
+                    'Authorization':'Basic QUZGMzIyNjAzOmljZWNyZWFt'
+                },
+                data: countryData
+            });
+        },
+
+
+
+        getCity : function(cityData) {
+            return $http({
+                method: 'POST',
+                url: 'https://apim-gateway.mmtcloud.com/mmt-htlsearch/1.0/staticsearch/v1.0/cityData?responseFormat=json',
+                headers: {
+                    'Content-Type': 'application/xml',
+                    'Authorization':'Basic QUZGMzIyNjAzOmljZWNyZWFt'
+                },
+                data: cityData
+            });
         }
+
+
+
+
+
+
+
+
+
+
+
+
     }
 });
