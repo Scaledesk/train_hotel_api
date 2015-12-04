@@ -46,8 +46,6 @@ angular.module('Traveller')
 
 
 
-
-
         $scope.searchHotels = function(){
             Hotel.search(hotelRequest).then(
                 function(data){
@@ -81,4 +79,57 @@ angular.module('Traveller')
                     // $scope.cities = data;
                 });
         };
+
+
+        angular.forEach($scope.hotels.data.HotelSearchResults.Hotels, function(hotel, key) {
+
+            //var h_name = hotel.name;
+           // angular.forEach(hotal, function(h, key) {
+
+
+            angular.forEach(hotel.hotel.PropertyInfo.MediaList, function(m, key){
+                $scope.media = {
+                    "type": m.type,
+                    "src": m.src
+                }
+            });
+
+            var tmp ={
+                "hotel_name" : hotel.name,
+                "total_recommendation" : hotel.PropertyInfo.GuestRecommendations.totalRecommendations,
+                "total_rating_value" : hotel.PropertyInfo.GuestRecommendations.OverallRecommendation.Rating.value,
+
+
+
+            }
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     });
