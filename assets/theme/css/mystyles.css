@@ -10,3 +10,7 @@
 
 
 .passenger-box { margin: 0px 30px;}
+.pre-loader {
+    padding: 50px;
+    background: url("/assets/theme/img/Preloader.gif") no-repeat 50% 50% transparent;
+}
