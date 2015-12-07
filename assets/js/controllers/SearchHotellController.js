@@ -11,7 +11,7 @@ angular.module('Traveller')
             '<RoomStayCandidate> <GuestCounts> <GuestCount count="1" ageQualifyingCode="10"/>' +
             ' <GuestCount count="1" ageQualifyingCode="8"> <Ages> <Age>4</Age> </Ages> </GuestCount> </GuestCounts> ' +
             '</RoomStayCandidate> </RoomStayCandidates> ' +
-            '<StayDateRanges> <StayDateRange start="2015-12-05" end="2015-12-15"/> </StayDateRanges>' +
+            '<StayDateRanges> <StayDateRange start="2015-12-10" end="2015-12-11"/> </StayDateRanges>' +
             ' <SupplierCodes> <SupplierCode>EPXX0001</SupplierCode> </SupplierCodes> </Criterion> </SearchCriteria>' +
             ' </MMTHotelSearchRequest>';
 
@@ -45,15 +45,14 @@ angular.module('Traveller')
         $scope.hotelResult = [];
         // function for search hotels
         $scope.searchHotels = function () {
+           $scope.$emit('LOAD')
             Hotel.search(hotelRequest).then(
                 function (data) {
                     //console.log(data);
                     $scope.hotels = data;
                     angular.forEach($scope.hotels.data.HotelSearchResults.Hotels, function (hotel, key) {
                         var mVal = '';
-
                         angular.forEach(hotel.PropertyInfo.RoomStays, function (rates, key) {
-
                             var start_date = rates.startDate;
                             var end_date = rates.endDate;
                             angular.forEach(rates.RoomRates, function (rate, key) {
@@ -84,11 +83,16 @@ angular.module('Traveller')
                             "rate" : t
                         };
                         $scope.hotelResult.push(temp);
+                        $scope.$emit('UNLOAD')
+
                     });
                 },
                 function (data) {
                     // $scope.hotels = data;
+                    $scope.$emit('UNLOAD')
                 });
+            //$scope.$emit('UNLOAD')
+            //$scope.loading = false;
         };
 
         // function for getting all countries

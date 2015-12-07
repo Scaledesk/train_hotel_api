@@ -19,9 +19,3 @@ angular.module('Traveller').factory('TrainBetweenStation', function($http,server
 
     }
 });
-
-// http://api.railwayapi.com/fare/train/12555/source/gkp/dest/ndls/age/18/quota/PT/doj/23-11-2014/apikey/12345/
-
-
-
-//http://api.railwayapi.com/between/source/gkp/dest/ngp/date/27-08/apikey/vehsi3246/
