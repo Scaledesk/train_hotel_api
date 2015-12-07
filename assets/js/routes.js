@@ -19,8 +19,8 @@ angular.module('Traveller').config(function($routeProvider){
       }).when('/contact-us', {
         templateUrl: "templates/contact-us.html",
         controller: "ContactController"
-      }).when('/hotel-details', {
-        templateUrl: "templates/hotels-details.html",
+      }).when('/hotel-details/:city/:check_in/:check_out', {
+        templateUrl: "templates/hotels-search-results-3.html",
         controller: "SearchHotelController"
       });
 });

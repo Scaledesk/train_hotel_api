@@ -8,7 +8,6 @@ angular.module('Traveller')
 
 $scope.fareClass ="";
 
-
         $scope.master_stations = StationCode.get();
         $scope.source = {};
         $scope.destination = {};
