@@ -390,12 +390,37 @@
                         </ul>
                     </div>
                     <ul class="booking-list">
-                        <li>
+
+
+
+
+
+
+                        <!--<div class="col-md-10" ng-repeat="hotel in hotelResult">
+                            <div class="col-md-4">
+                                <img src="{{hotel.media.src}}" width="100" height="200"><br/><br/>
+                            </div>
+                            <div class="col-md-8">
+                                Hotel Name : {{hotel.hotel_name}}<br/>
+                                Lowest Price: {{hotel.lowest_rate}}<br/>
+                                Total Recommendation :{{hotel.total_recommendation}}<br/>
+                                Rating  : {{hotel.total_rating_value}}<br/>
+                                Rent : {{hotel.rate.amount}} /person<br/>
+                                start date : {{hotel.rate.startDate}}<br/>
+                                end date : {{hotel.rate.endDate}}<br/>
+                                Group : {{hotel.rate.group}}
+                            </div>
+                            <br/><br/><br/><br/><br/>
+                        </div>
+-->
+
+
+                        <li ng-repeat="hotel in hotelResult">
                             <a class="booking-item" href="#">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="booking-item-img-wrap">
-                                            <img src="img/hotel_porto_bay_rio_internacional_rooftop_pool_800x600.jpg" alt="Image Alternative text" title="hotel PORTO BAY RIO INTERNACIONAL rooftop pool" />
+                                            <img src="{{hotel.media.src}}" alt="Image Alternative text" title="hotel PORTO BAY RIO INTERNACIONAL rooftop pool" />
                                             <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>23</div>
                                         </div>
                                     </div>
@@ -412,468 +437,27 @@
                                                 </li>
                                                 <li><i class="fa fa-star-o"></i>
                                                 </li>
-                                            </ul><span class="booking-item-rating-number"><b >3.9</b> of 5</span><small>(710 reviews)</small>
+                                            </ul><span class="booking-item-rating-number"><b >{{hotel.total_rating_value}}</b> of 5</span><small>({{hotel.total_recommendation}} reviews)</small>
                                         </div>
-                                        <h5 class="booking-item-title">Warwick New York Hotel</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> New York, NY (Midtown East)</p><small class="booking-item-last-booked">Latest booking: 48 minutes ago</small>
+                                        <h5 class="booking-item-title">{{hotel.hotel_name}}</h5>
+                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> {{hotel.hotel_name}}</p><small class="booking-item-last-booked">Latest booking: 48 minutes ago</small>
                                     </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$452</span><span>/night</span><span class="btn btn-primary">Book Now</span>
+                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">&#8377;{{hotel.rate.amount}}  </span><span>/person /night</span><span class="btn btn-primary">Book Now</span>
                                     </div>
                                 </div>
                             </a>
                         </li>
-                        <li>
-                            <a class="booking-item" href="#">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="booking-item-img-wrap">
-                                            <img src="img/hotel_eden_mar_suite_800x600.jpg" alt="Image Alternative text" title="hotel EDEN MAR suite" />
-                                            <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>15</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="booking-item-rating">
-                                            <ul class="icon-group booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                            </ul><span class="booking-item-rating-number"><b >4.8</b> of 5</span><small>(522 reviews)</small>
-                                        </div>
-                                        <h5 class="booking-item-title">Club Quarters Grand Central</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> New York, NY (Chelsea)</p><small class="booking-item-last-booked">Latest booking: Just now</small>
-                                    </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$242</span><span>/night</span><span class="btn btn-primary">Book Now</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="booking-item" href="#">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="booking-item-img-wrap">
-                                            <img src="img/lhotel_porto_bay_sao_paulo_luxury_suite_800x600.jpg" alt="Image Alternative text" title="LHOTEL PORTO BAY SAO PAULO luxury suite" />
-                                            <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>5</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="booking-item-rating">
-                                            <ul class="icon-group booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star-o"></i>
-                                                </li>
-                                            </ul><span class="booking-item-rating-number"><b >3.6</b> of 5</span><small>(661 reviews)</small>
-                                        </div>
-                                        <h5 class="booking-item-title">Wyndham Garden Chinatown</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> Long Island City, NY (Long Island City - Astoria)</p><small class="booking-item-last-booked">Latest booking: 50 minutes ago</small>
-                                    </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$415</span><span>/night</span><span class="btn btn-primary">Book Now</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="booking-item" href="#">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="booking-item-img-wrap">
-                                            <img src="img/hotel_porto_bay_serra_golf_library_800x600.jpg" alt="Image Alternative text" title="hotel PORTO BAY SERRA GOLF library" />
-                                            <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>17</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="booking-item-rating">
-                                            <ul class="icon-group booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star-o"></i>
-                                                </li>
-                                            </ul><span class="booking-item-rating-number"><b >3.9</b> of 5</span><small>(1194 reviews)</small>
-                                        </div>
-                                        <h5 class="booking-item-title">The Benjamin</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> Bronx (Bronx)</p><small class="booking-item-last-booked">Latest booking: Just now</small>
-                                    </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$250</span><span>/night</span><span class="btn btn-primary">Book Now</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="booking-item" href="#">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="booking-item-img-wrap">
-                                            <img src="img/the_pool_800x600.jpg" alt="Image Alternative text" title="The pool" />
-                                            <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>27</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="booking-item-rating">
-                                            <ul class="icon-group booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star-o"></i>
-                                                </li>
-                                            </ul><span class="booking-item-rating-number"><b >3.9</b> of 5</span><small>(464 reviews)</small>
-                                        </div>
-                                        <h5 class="booking-item-title">Grand Hyatt New York</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> New York, NY (Times Square)</p><small class="booking-item-last-booked">Latest booking: 26 minutes ago</small>
-                                    </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$254</span><span>/night</span><span class="btn btn-primary">Book Now</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="booking-item" href="#">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="booking-item-img-wrap">
-                                            <img src="img/lhotel_porto_bay_sao_paulo_lobby_800x600.jpg" alt="Image Alternative text" title="LHOTEL PORTO BAY SAO PAULO lobby" />
-                                            <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>9</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="booking-item-rating">
-                                            <ul class="icon-group booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star-half-empty"></i>
-                                                </li>
-                                            </ul><span class="booking-item-rating-number"><b >4.1</b> of 5</span><small>(1228 reviews)</small>
-                                        </div>
-                                        <h5 class="booking-item-title">JFK Inn</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> Queens (LaGuardia Airport (LGA))</p><small class="booking-item-last-booked">Latest booking: 26 minutes ago</small>
-                                    </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$214</span><span>/night</span><span class="btn btn-primary">Book Now</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="booking-item" href="#">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="booking-item-img-wrap">
-                                            <img src="img/hotel_2_800x600.jpg" alt="Image Alternative text" title="hotel 2" />
-                                            <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>5</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="booking-item-rating">
-                                            <ul class="icon-group booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star-half-empty"></i>
-                                                </li>
-                                            </ul><span class="booking-item-rating-number"><b >4.2</b> of 5</span><small>(1462 reviews)</small>
-                                        </div>
-                                        <h5 class="booking-item-title">New York Hilton Midtown</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> New York, NY (Chelsea)</p><small class="booking-item-last-booked">Latest booking: 12 hours ago</small>
-                                    </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$175</span><span>/night</span><span class="btn btn-primary">Book Now</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="booking-item" href="#">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="booking-item-img-wrap">
-                                            <img src="img/hotel_the_cliff_bay_spa_suite_800x600.jpg" alt="Image Alternative text" title="hotel THE CLIFF BAY spa suite" />
-                                            <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>23</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="booking-item-rating">
-                                            <ul class="icon-group booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star-o"></i>
-                                                </li>
-                                            </ul><span class="booking-item-rating-number"><b >4</b> of 5</span><small>(1400 reviews)</small>
-                                        </div>
-                                        <h5 class="booking-item-title">Wellington Hotel</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> New York, NY (Upper West Side)</p><small class="booking-item-last-booked">Latest booking: 7 hours ago</small>
-                                    </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$188</span><span>/night</span><span class="btn btn-primary">Book Now</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="booking-item" href="#">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="booking-item-img-wrap">
-                                            <img src="img/hotel_porto_bay_serra_golf_suite_800x600.jpg" alt="Image Alternative text" title="hotel PORTO BAY SERRA GOLF suite" />
-                                            <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>28</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="booking-item-rating">
-                                            <ul class="icon-group booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star-half-empty"></i>
-                                                </li>
-                                            </ul><span class="booking-item-rating-number"><b >4.3</b> of 5</span><small>(1231 reviews)</small>
-                                        </div>
-                                        <h5 class="booking-item-title">The Kimberly Hotel</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> Brooklyn, NY (Brooklyn)</p><small class="booking-item-last-booked">Latest booking: 12 hours ago</small>
-                                    </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$370</span><span>/night</span><span class="btn btn-primary">Book Now</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="booking-item" href="#">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="booking-item-img-wrap">
-                                            <img src="img/hotel_porto_bay_liberdade_800x600.jpg" alt="Image Alternative text" title="hotel PORTO BAY LIBERDADE" />
-                                            <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>9</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="booking-item-rating">
-                                            <ul class="icon-group booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star-half-empty"></i>
-                                                </li>
-                                            </ul><span class="booking-item-rating-number"><b >4.3</b> of 5</span><small>(584 reviews)</small>
-                                        </div>
-                                        <h5 class="booking-item-title">Holiday Inn Express Kennedy</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> New York, NY (Times Square)</p><small class="booking-item-last-booked">Latest booking: 11 hours ago</small>
-                                    </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$179</span><span>/night</span><span class="btn btn-primary">Book Now</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="booking-item" href="#">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="booking-item-img-wrap">
-                                            <img src="img/hotel_porto_bay_rio_internacional_de_luxe_800x600.jpg" alt="Image Alternative text" title="hotel PORTO BAY RIO INTERNACIONAL de luxe" />
-                                            <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>8</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="booking-item-rating">
-                                            <ul class="icon-group booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star-half-empty"></i>
-                                                </li>
-                                                <li><i class="fa fa-star-o"></i>
-                                                </li>
-                                            </ul><span class="booking-item-rating-number"><b >3.5</b> of 5</span><small>(831 reviews)</small>
-                                        </div>
-                                        <h5 class="booking-item-title">The London NYC</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> Brooklyn, NY (Brooklyn)</p><small class="booking-item-last-booked">Latest booking: 45 minutes ago</small>
-                                    </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$254</span><span>/night</span><span class="btn btn-primary">Book Now</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="booking-item" href="#">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="booking-item-img-wrap">
-                                            <img src="img/hotel_porto_bay_serra_golf_suite2_800x600.jpg" alt="Image Alternative text" title="hotel PORTO BAY SERRA GOLF suite2" />
-                                            <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>24</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="booking-item-rating">
-                                            <ul class="icon-group booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star-o"></i>
-                                                </li>
-                                            </ul><span class="booking-item-rating-number"><b >4</b> of 5</span><small>(1108 reviews)</small>
-                                        </div>
-                                        <h5 class="booking-item-title">Affinia Shelburne</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> Brooklyn, NY (Brooklyn)</p><small class="booking-item-last-booked">Latest booking: 45 minutes ago</small>
-                                    </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$455</span><span>/night</span><span class="btn btn-primary">Book Now</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="booking-item" href="#">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="booking-item-img-wrap">
-                                            <img src="img/hotel_porto_bay_serra_golf_living_room_800x600.jpg" alt="Image Alternative text" title="hotel PORTO BAY SERRA GOLF living room" />
-                                            <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>23</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="booking-item-rating">
-                                            <ul class="icon-group booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                            </ul><span class="booking-item-rating-number"><b >4.7</b> of 5</span><small>(1290 reviews)</small>
-                                        </div>
-                                        <h5 class="booking-item-title">Waldorf Astoria New York</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> New York, NY (Chelsea)</p><small class="booking-item-last-booked">Latest booking: 40 minutes ago</small>
-                                    </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$243</span><span>/night</span><span class="btn btn-primary">Book Now</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="booking-item" href="#">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="booking-item-img-wrap">
-                                            <img src="img/lhotel_porto_bay_sao_paulo_suite_lhotel_living_room_800x600.jpg" alt="Image Alternative text" title="LHOTEL PORTO BAY SAO PAULO suite lhotel living room" />
-                                            <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>10</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="booking-item-rating">
-                                            <ul class="icon-group booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                            </ul><span class="booking-item-rating-number"><b >4.7</b> of 5</span><small>(480 reviews)</small>
-                                        </div>
-                                        <h5 class="booking-item-title">Bryant Park Hotel</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> New York, NY (Times Square)</p><small class="booking-item-last-booked">Latest booking: Just now</small>
-                                    </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$465</span><span>/night</span><span class="btn btn-primary">Book Now</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a class="booking-item" href="#">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <div class="booking-item-img-wrap">
-                                            <img src="img/hotel_1_800x600.jpg" alt="Image Alternative text" title="hotel 1" />
-                                            <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>21</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="booking-item-rating">
-                                            <ul class="icon-group booking-item-rating-stars">
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star"></i>
-                                                </li>
-                                                <li><i class="fa fa-star-half-empty"></i>
-                                                </li>
-                                            </ul><span class="booking-item-rating-number"><b >4.5</b> of 5</span><small>(1411 reviews)</small>
-                                        </div>
-                                        <h5 class="booking-item-title">InterContinental New York Barclay</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> Jamaica, NY (Kennedy Airport (JFK))</p><small class="booking-item-last-booked">Latest booking: Just now</small>
-                                    </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">$331</span><span>/night</span><span class="btn btn-primary">Book Now</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
+
+
+
+
+
+
+
                     </ul>
                     <div class="row">
                         <div class="col-md-6">
-                            <p><small>521 hotels found in New York. &nbsp;&nbsp;Showing 1 – 15</small>
+                            <p><small> hotels found in New York. &nbsp;&nbsp;Showing 1 – 15</small>
                             </p>
                             <ul class="pagination">
                                 <li class="active"><a href="#">1</a>
