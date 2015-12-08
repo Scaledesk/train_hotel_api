@@ -12,19 +12,14 @@ angular.module('Traveller')
             if(query.length < 3) return [];
             $scope.city = $filter('filter')($scope.cityData,{name:query})
         };
-
         angular.forEach($scope.cityData, function(c, key) {
             if(c.code == city){
                 $scope.city.selected = c;
             }
         });
-
-
         console.log(city);
         console.log($scope.check_in);
         console.log($scope.check_out);
-
-
 
         var hotelRequest = '<MMTHotelSearchRequest><POS><Requestor type="B2C" idContext="AFF" id="AFF322603" channel="B2Cweb"/> <Source iSOCurrency="INR"/> </POS> <ResultTransformer> ' +
             '<GuestRecommendationEnabled maxRecommendations="1">true</GuestRecommendationEnabled> ' +

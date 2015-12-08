@@ -58,7 +58,7 @@ $scope.fareClass ="";
             $scope.results.push(temp);
         }*/
 
-
+        $scope.$emit('LOAD')
         TrainBetweenStation.get(source,destination,journey_date)
              .success(function(data) {
              $scope.records = data.train;
@@ -89,6 +89,8 @@ $scope.fareClass ="";
                              "no_of_passenger" : no_of_passenger
                          };
                          $scope.results.push(temp);
+                         $scope.$emit('UNLOAD')
+
                      });
              });
              });
