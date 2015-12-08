@@ -22,12 +22,14 @@
                             <div class="col-md-3">
                                 <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
                                     <label>Check-in</label>
+                                    <!--<input class="form-control" ui-date ui-date-format=" yy-mm-dd" ng-model="check_in">-->
                                     <input class="form-control" name="start" type="text" ng-model="check_in" />
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group form-group-lg form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-highlight"></i>
                                     <label>Check-out</label>
+                                    <!--<input class="form-control" ui-date ui-date-format=" yy-mm-dd"ng-model="">-->
                                     <input class="form-control" name="end" type="text" ng-model="check_out" />
                                 </div>
                             </div>
@@ -104,7 +106,21 @@
                     <div class="col-md-4">
                         <div class="form-group form-group-icon-left"><i class="fa fa-map-marker input-icon input-icon-hightlight"></i>
                             <label>Where</label>
-                            <input class="typeahead form-control" value="United States, New York" placeholder="City, Hotel Name or U.S. Zip Code" type="text" ng-model="city" />
+
+                            <ui-select ng-model="city.selected"
+                                       theme="bootstrap"
+                                       ng-disabled="disabled"
+                                       reset-search-input="true">
+                                <ui-select-match placeholder="Enter city name">{{$select.selected.name}}</ui-select-match>
+                                <ui-select-choices repeat="c in city track by $index"
+                                                   refresh="refreshCity($select.search)"
+                                                   refresh-delay="0">
+                                    <div ng-bind-html="c.name | highlight: $select.search"></div>
+                                </ui-select-choices>
+                            </ui-select>
+
+
+                            <!--<input class="typeahead form-control" value="United States, New York" placeholder="City, Hotel Name or U.S. Zip Code" type="text" ng-model="city" />-->
                         </div>
                     </div>
                     <div class="col-md-4">
@@ -113,13 +129,15 @@
                                 <div class="col-md-6">
                                     <div class="form-group form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-hightlight"></i>
                                         <label>Check in</label>
-                                        <input class="form-control" name="start" type="text" ng-model="check_in" />
+                                        <!--<input class="form-control" name="start" type="text" ng-model="check_in" />-->
+                                        <input class="form-control" ui-date ui-date-format=" yy-mm-dd" ng-model="check_in">
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group form-group-icon-left"><i class="fa fa-calendar input-icon input-icon-hightlight"></i>
                                         <label>Check out</label>
-                                        <input class="form-control" name="end" type="text" ng-model="check_out" />
+                                        <!--<input class="form-control" name="end" type="text" ng-model="check_out" />-->
+                                        <input class="form-control" ui-date ui-date-format=" yy-mm-dd" ng-model="check_out">
                                     </div>
                                 </div>
                             </div>

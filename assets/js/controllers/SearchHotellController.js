@@ -2,11 +2,25 @@ angular.module('Traveller')
 // inject the Activation service into our controller
     .controller('SearchHotelController', function($http, $scope, Hotel,$routeParams,$filter, $location) {
 
-
-        $scope.city = $routeParams.city;
+        var city = $routeParams.city;
         $scope.check_in = $routeParams.check_in;
         $scope.check_out = $routeParams.check_out;
-        console.log($scope.city);
+        $scope.cityData = Hotel.getCity();
+        $scope.city = {};
+        $scope.refreshCity = function(query){
+            if(query == null) return [];
+            if(query.length < 3) return [];
+            $scope.city = $filter('filter')($scope.cityData,{name:query})
+        };
+
+        angular.forEach($scope.cityData, function(c, key) {
+            if(c.code == city){
+                $scope.city.selected = c;
+            }
+        });
+
+
+        console.log(city);
         console.log($scope.check_in);
         console.log($scope.check_out);
 
@@ -17,7 +31,7 @@ angular.module('Traveller')
             '<PriceBreakupEnabled>true</PriceBreakupEnabled> <CancellationPolicyRulesReq text="yes"/> ' +
             '</ResultTransformer> <ResultPreferences> <ResultPreference> <Pagination paginate="false" page="1" limit="10"/> </ResultPreference> </ResultPreferences> ' +
             '<SearchCriteria> <Criterion> ' +
-            '<Area> <CityCode>' + $scope.city + '</CityCode> <CountryCode>IN</CountryCode> </Area> ' +
+            '<Area> <CityCode>' + city + '</CityCode> <CountryCode>IN</CountryCode> </Area> ' +
             '<RoomStayCandidates> <RoomStayCandidate> <GuestCounts> <GuestCount count="1" ageQualifyingCode="10"/> </GuestCounts> </RoomStayCandidate> ' +
             '<RoomStayCandidate> <GuestCounts> <GuestCount count="1" ageQualifyingCode="10"/>' +
             ' <GuestCount count="1" ageQualifyingCode="8"> <Ages> <Age>4</Age> </Ages> </GuestCount> </GuestCounts> ' +
