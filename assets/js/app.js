@@ -1,4 +1,4 @@
-angular.module('Traveller', ['ngRoute',  'ngResource', 'ui.select', 'ngSanitize', 'ui.date', 'checklist-model', 'angularUtils.directives.dirPagination'])
+angular.module('Traveller', ['ngRoute',  'ngResource', 'ui.select', 'ngSanitize', 'ui.date', 'checklist-model', 'angularUtils.directives.dirPagination', 'ui.bootstrap'])
     .config(function(paginationTemplateProvider) {
         paginationTemplateProvider.setPath('assets/js/includes/angular-utils-pagination/dirPagination.tpl.html');
     })

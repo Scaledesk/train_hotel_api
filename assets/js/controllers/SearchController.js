@@ -1,10 +1,8 @@
 angular.module('Traveller')
-// inject the Activation service into our controller
     .controller('SearchController', function(TrainBetweenStation,  $http, StationCode, $scope,$routeParams,$filter, $location) {
         $scope.checkboxModel = {
         };
 $scope.fareClass ="";
-
         $scope.master_stations = StationCode.get();
         $scope.source = {};
         $scope.destination = {};
@@ -18,12 +16,10 @@ $scope.fareClass ="";
             if(query.length < 3) return [];
             $scope.destinations = $filter('filter')($scope.master_stations,{name:query})
         };
-
             var source = $routeParams.source;
             var destination = $routeParams.destination;
             var journey_date = $routeParams.journey_date;
             var no_of_passenger = $routeParams.no_of_passenger;
-
         angular.forEach($scope.master_stations, function(station, key) {
             if(station.code == source){
                 $scope.source.selected = station;
@@ -31,7 +27,6 @@ $scope.fareClass ="";
             if(station.code == destination){
                 $scope.destination.selected = station;
             }
-
         });
         $scope.journey_date =journey_date;
         $scope.no_of_passenger = no_of_passenger;
