@@ -1,6 +1,6 @@
 angular.module('Traveller')
 // inject the Activation service into our controller
-    .controller('HomeController', function(TrainBetweenStation, StationCode, $http, $scope, $location,$filter) {
+    .controller('HomeController', function(TrainBetweenStation, Hotel, StationCode, $http, $scope, $location,$filter) {
         //var d = $location.search().code;
         $scope.tab = 'train';
         $scope.selectedItem = {};
@@ -28,9 +28,16 @@ angular.module('Traveller')
             $location.path('/search/'+source+'/'+dest+'/'+dt+'/'+passenger);
         };
 
+        $scope.cityData = Hotel.getCity();
+       $scope.city = {};
+        $scope.refreshCity = function(query){
+            if(query == null) return [];
+            if(query.length < 3) return [];
+            $scope.city = $filter('filter')($scope.cityData,{name:query})
+        };
         $scope.searchHotel =function(hotel){
             //$scope.city.selected.code
-            var city = hotel.city;
+            var city = $scope.city.selected.code;
             var check_in = hotel.check_in;
             var check_out = hotel.check_out;
             //var passenger = formData.passenger;
