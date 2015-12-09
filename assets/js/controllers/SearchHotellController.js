@@ -20,6 +20,13 @@ angular.module('Traveller')
         console.log(city);
         console.log($scope.check_in);
         console.log($scope.check_out);
+        $scope.starRating = {
+            "a" : "",
+            "b" : "",
+            "c" : "",
+            "d" : "",
+            "e" : ""
+        };
 
         var hotelRequest = '<MMTHotelSearchRequest><POS><Requestor type="B2C" idContext="AFF" id="AFF322603" channel="B2Cweb"/> <Source iSOCurrency="INR"/> </POS> <ResultTransformer> ' +
             '<GuestRecommendationEnabled maxRecommendations="1">true</GuestRecommendationEnabled> ' +
@@ -47,7 +54,12 @@ angular.module('Traveller')
                     $scope.hotels = data;
                     angular.forEach($scope.hotels.data.HotelSearchResults.Hotels, function (hotel, key) {
                         var mVal = '';
-                        angular.forEach(hotel.PropertyInfo.RoomStays, function (rates, key) {
+                            angular.forEach(hotel.PropertyInfo.Facets, function (star, key) {
+                                if(star.group =='STAR_RATING'){
+                                        s = star.FacetValue.value;
+                                }
+                            });
+                            angular.forEach(hotel.PropertyInfo.RoomStays, function (rates, key) {
 
                             var start_date = rates.startDate;
                             var end_date = rates.endDate;
@@ -72,6 +84,7 @@ angular.module('Traveller')
                         var temp = {
                             "hotel_name": hotel.Name,
                             "hotel_id" : hotel.id,
+                            "star_rating" : s,
                             "media": mVal,
                             "lowest_rate": hotel.LowestRate.LowestRate.value,
                             "total_recommendation": hotel.PropertyInfo.GuestRecommendations.totalRecommendations,

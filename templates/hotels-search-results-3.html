@@ -228,29 +228,30 @@
                                 <h5 class="booking-filters-title">Star Rating</h5>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" />5 star (220)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.a' ng-true-value="'5'" ng-false-value="''">5 star (220)</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" />4 star (112)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.b' ng-true-value="'4'" ng-false-value="''">4 star (112)</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" />3 star (75)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.c' ng-true-value="'3'" ng-false-value="''">3 star (75)</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" />2 star (60)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.d' ng-true-value="'2'" ng-false-value="''">2 star (60)</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" />1 star (20)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.e' ng-true-value="'1'" ng-false-value="''">1 star (20)</label>
                                 </div>
+                               <!-- {{starRating}}-->
                             </li>
                             <li>
                                 <h5 class="booking-filters-title">Facility</h5>
                                 <div class="checkbox">
-                                    <label>
+                                   <label>
                                         <input class="i-check" type="checkbox" />Wi-Fi (55)</label>
                                 </div>
                                 <div class="checkbox">
@@ -393,17 +394,17 @@
                 </div>
                 <div class="col-md-9">
                     <div class="nav-drop booking-sort">
-                        <h5 class="booking-sort-title"><a href="#">Sort: Aviability<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a></h5>
+                        <h5 class="booking-sort-title"><a ng-href="">Sort: Aviability<i class="fa fa-angle-down"></i><i class="fa fa-angle-up"></i></a ng-href=""></h5>
                         <ul class="nav-drop-menu">
-                            <li><a href="#">Price (low to high)</a>
+                            <li><a href="">Price (low to high)</a>
                             </li>
-                            <li><a href="#">Price (hight to low)</a>
+                            <li><a href="">Price (hight to low)</a>
                             </li>
-                            <li><a href="#">Ranking</a>
+                            <li><a href="">Ranking</a>
                             </li>
-                            <li><a href="#">Distance</a>
+                            <li><a href="">Distance</a>
                             </li>
-                            <li><a href="#">Number of Reviews</a>
+                            <li><a href="">Number of Reviews</a>
                             </li>
                         </ul>
                     </div>
@@ -431,9 +432,9 @@
                             <br/><br/><br/><br/><br/>
                         </div>
 -->
+                        <!--(starRating.a || starRating.b || starRating.c || starRating.d || starRating.e)-->
 
-
-                        <li ng-repeat="hotel in hotelResult">
+                        <li ng-repeat="hotel in hotelResult | filter: starRating.a">
                             <a class="booking-item" href="#">
                                 <div class="row">
                                     <div class="col-md-3">
@@ -457,7 +458,7 @@
                                                 </li>
                                             </ul><span class="booking-item-rating-number"><b >{{hotel.total_rating_value}}</b> of 5</span><small>({{hotel.total_recommendation}} reviews)</small>
                                         </div>
-                                        <h5 class="booking-item-title">{{hotel.hotel_name}}</h5>
+                                        <h5 class="booking-item-title">{{hotel.hotel_name}} {{hotel.star_rating}} star</h5>
                                         <p class="booking-item-address"><i class="fa fa-map-marker"></i> {{hotel.hotel_name}}</p><small class="booking-item-last-booked">Latest booking: 48 minutes ago</small>
                                     </div>
                                     <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">&#8377;{{hotel.rate.amount}}  </span><span>/person /night</span><span class="btn btn-primary">Book Now</span>

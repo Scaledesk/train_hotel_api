@@ -33,9 +33,6 @@ $scope.fareClass ="";
             $scope.results = [];
         $scope.sortType     = "duration";
         $scope.sortReverse  = false;
-
-
-
         /*for(i=0;i<25;i++){
             var temp = {
                 "train" : "dummy",
