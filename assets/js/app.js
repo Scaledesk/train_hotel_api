@@ -5,7 +5,30 @@ angular.module('Traveller', ['ngRoute',  'ngResource', 'ui.select', 'ngSanitize'
     .constant("serverConfig", {
         "address": "http://api.railwayapi.com/",
         "apiKey": "/apikey/fqzrs9685/"
-    });
+    });/*.config(['$httpProvider', function ($httpProvider) {
+        $httpProvider.defaults.useXDomain = true;
+        delete $httpProvider.defaults.headers.common['X-Requested-With'];
+    }]).all('/!*', function (request, response, next) {
+        response.header("Access-Control-Allow-Origin", "*");
+        response.header("Access-Control-Allow-Headers", "X-Requested-With");
+        response.header("Access-Control-Allow-Methods", "GET, POST", "PUT", "DELETE");
+        next();
+
+    });*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*
 angular.module('Traveller').filter('propsFilter', function() {
     return function(items, props) {
