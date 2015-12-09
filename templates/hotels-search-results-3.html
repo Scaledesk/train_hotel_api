@@ -1,15 +1,5 @@
         <div class="container">
-            <ul class="breadcrumb">
-                <li><a href="index.html">Home</a>
-                </li>
-                <li><a href="#">United States</a>
-                </li>
-                <li><a href="#">New York (NY)</a>
-                </li>
-                <li><a href="#">New York City</a>
-                </li>
-                <li class="active">New York City Hotels</li>
-            </ul>
+
             <div class="mfp-with-anim mfp-hide mfp-dialog mfp-search-dialog" id="search-dialog">
                 <h3>Search for Hotel</h3>
                 <form>
@@ -100,7 +90,9 @@
                     <button class="btn btn-primary btn-lg" type="submit">Search for Hotels</button>
                 </form>
             </div>
-            <h3 class="booking-title">{{hotelResult.length;}} hotels in Delhi on {{check_in | date:'MMM d'}} to {{check_out | date:'MMM d'}} for 1 adult</h3>
+            <span ng-hide="loading">
+            <h3 class="booking-title">{{hotelResult.length;}} hotels in {{city.selected.name}} on {{check_in | date:'MMM d'}} to {{check_out | date:'MMM d'}} for 1 adult</h3>
+            </span>
             <form class="booking-item-dates-change mb40">
                 <div class="row">
                     <div class="col-md-4">
@@ -222,43 +214,53 @@
                         <ul class="list booking-filters-list">
                             <li>
                                 <h5 class="booking-filters-title">Price</h5>
-                                <input type="text" id="price-slider">
+                                <input type="text" id="price-slider" ng-model="starRating.rate.amount">
                             </li>
                             <li>
                                 <h5 class="booking-filters-title">Star Rating</h5>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" ng-model='starRating.a' ng-true-value="'5'" ng-false-value="''">5 star (220)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.star_rating' ng-true-value="'5'" ng-false-value="''">5 star (220)</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" ng-model='starRating.b' ng-true-value="'4'" ng-false-value="''">4 star (112)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.star_rating' ng-true-value="'4'" ng-false-value="''">4 star (112)</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" ng-model='starRating.c' ng-true-value="'3'" ng-false-value="''">3 star (75)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.star_rating' ng-true-value="'3'" ng-false-value="''">3 star (75)</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" ng-model='starRating.d' ng-true-value="'2'" ng-false-value="''">2 star (60)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.star_rating' ng-true-value="'2'" ng-false-value="''">2 star (60)</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" ng-model='starRating.e' ng-true-value="'1'" ng-false-value="''">1 star (20)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.star_rating' ng-true-value="'1'" ng-false-value="''">1 star (20)</label>
                                 </div>
                                <!-- {{starRating}}-->
                             </li>
                             <li>
+
+
+                                <!--"room_service" : room_service,
+                                "travel": travel,
+                                "restaurant" : restaurant,
+                                "parking" : parking,
+                                "laundry": laundry,
+                                "wi_fi" : internet_wifi,
+                                "business_facilities" : business_facilities-->
+
                                 <h5 class="booking-filters-title">Facility</h5>
                                 <div class="checkbox">
                                    <label>
-                                        <input class="i-check" type="checkbox" />Wi-Fi (55)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.wi_fi' ng-true-value="'Yes'" ng-false-value="''" />Wi-Fi (55)</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" />Parking (264)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.parking' ng-true-value="'Yes'" ng-false-value="''" />Parking (264)</label>
                                 </div>
-                                <div class="checkbox">
+                                <!--<div class="checkbox">
                                     <label>
                                         <input class="i-check" type="checkbox" />Airport Shuttle (137)</label>
                                 </div>
@@ -277,18 +279,26 @@
                                 <div class="checkbox">
                                     <label>
                                         <input class="i-check" type="checkbox" />Spa (20)</label>
+                                </div>-->
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.laundry' ng-true-value="'Yes'" ng-false-value="''" />Laundary (20)</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" />Family Rooms (20)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.travel' ng-true-value="'Yes'" ng-false-value="''" />Travel Transfer (20)</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" />Pet Friendly (20)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.room_service' ng-true-value="'Yes'" ng-false-value="''" />Room Service (20)</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" />Restaurant (20)</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.business_facilities' ng-true-value="'Yes'" ng-false-value="''" />Business Facilities (20)</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.restaurant' ng-true-value="'Yes'" ng-false-value="''" />Restaurant (20)</label>
                                 </div>
                             </li>
                             <li>
@@ -434,12 +444,12 @@
 -->
                         <!--(starRating.a || starRating.b || starRating.c || starRating.d || starRating.e)-->
 
-                        <li ng-repeat="hotel in hotelResult | filter: starRating.a">
+                        <li ng-repeat="hotel in hotelResult | filter: starRating:strict">
                             <a class="booking-item" href="#">
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="booking-item-img-wrap">
-                                            <img src="{{hotel.media.src}}" alt="Image Alternative text" title="hotel PORTO BAY RIO INTERNACIONAL rooftop pool" />
+                                            <img src="{{hotel.media.src}}" alt="Image not found" title="hotel PORTO BAY RIO INTERNACIONAL rooftop pool" />
                                             <div class="booking-item-img-num"><i class="fa fa-picture-o"></i>23</div>
                                         </div>
                                     </div>
@@ -459,9 +469,9 @@
                                             </ul><span class="booking-item-rating-number"><b >{{hotel.total_rating_value}}</b> of 5</span><small>({{hotel.total_recommendation}} reviews)</small>
                                         </div>
                                         <h5 class="booking-item-title">{{hotel.hotel_name}} {{hotel.star_rating}} star</h5>
-                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> {{hotel.hotel_name}}</p><small class="booking-item-last-booked">Latest booking: 48 minutes ago</small>
+                                        <p class="booking-item-address"><i class="fa fa-map-marker"></i> {{hotel.hotel_name}}</p><small class="booking-item-last-booked">Latest booking: 48 minutes ago<!--{{hotel.room_service}}{{hotel.travel}}{{hotel.restaurant}}{{hotel.parking}}{{hotel.wi_fi}}--></small>
                                     </div>
-                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">&#8377;{{hotel.rate.amount}}  </span><span>/person /night</span><span class="btn btn-primary">Book Now</span>
+                                    <div class="col-md-3"><span class="booking-item-price-from">from</span><span class="booking-item-price">&#8377;{{hotel.rate.amount}}  </span><span>/person</span><br/><span class="btn btn-primary">Book Now</span>
                                     </div>
                                 </div>
                             </a>
@@ -476,7 +486,7 @@
                     </ul>
                     <div class="row">
                         <div class="col-md-6">
-                            <p><small>{{hotelResult.length;}} hotels found in New York. &nbsp;&nbsp;Showing 1 – 15</small>
+                            <p><small>{{hotelResult.length;}} hotels found in {{city.selected.name}} </small>
                             </p>
                             <ul class="pagination">
                                 <li class="active"><a href="#">1</a>

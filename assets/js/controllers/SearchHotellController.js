@@ -1,7 +1,6 @@
 angular.module('Traveller')
 // inject the Activation service into our controller
     .controller('SearchHotelController', function($http, $scope, Hotel,$routeParams,$filter, $location) {
-
         var city = $routeParams.city;
         $scope.check_in = $routeParams.check_in;
         $scope.check_out = $routeParams.check_out;
@@ -37,9 +36,6 @@ angular.module('Traveller')
             ' <SupplierCodes> <SupplierCode>EPXX0001</SupplierCode> </SupplierCodes> </Criterion> </SearchCriteria>' +
             ' </MMTHotelSearchRequest>';
 
-
-
-
         $scope.hotelResult = [];
         // function for search hotels
             $scope.$emit('LOAD')
@@ -49,9 +45,60 @@ angular.module('Traveller')
                     $scope.hotels = data;
                     angular.forEach($scope.hotels.data.HotelSearchResults.Hotels, function (hotel, key) {
                         var mVal = '';
+                        var room_service = '';
+                        var travel = '';
+                        var restaurant = '';
+                        var parking = '';
+                        var laundry = '';
+                        var internet_wifi ='';
+                        var business_facilities = '';
                             angular.forEach(hotel.PropertyInfo.Facets, function (star, key) {
                                 if(star.group =='STAR_RATING'){
                                         s = star.FacetValue.value;
+                                }
+                                if(star.group == 'AMENITIES'){
+                                    angular.forEach(star.FacetValues, function (a, key) {
+                                            if(a.value == 'Room Service'){
+                                                room_service = "Yes";
+                                            }else{
+                                                room_service = "No";
+                                            }
+                                        if(a.value == 'Travel & Transfers'){
+                                                    travel = 'Yes';
+                                        }else{
+                                            travel = 'No';
+                                        }
+                                        if(a.value == 'Restaurant/Bar'){
+                                                    restaurant = 'Yes';
+                                        }else{
+                                            restaurant = 'No';
+                                        }
+                                        if(a.value == 'Parking'){
+                                                parking = 'Yes';
+                                        }else{
+                                            parking = 'No';
+                                        }
+                                        if(a.value == 'Laundry Services'){
+                                                       laundry = 'Yes';
+                                        }else{
+                                            laundry = 'No';
+                                        }
+                                        if(a.value == 'Internet/Wi-Fi'){
+                                                internet_wifi = 'Yes';
+                                        }else{
+                                            internet_wifi = 'No';
+                                        }
+                                        if(a.value == 'Business Facilities'){
+                                                    business_facilities = 'Yes';
+                                        }else{
+                                            business_facilities = 'No';
+                                        }
+                                        /*if(a.value == ''){
+
+                                        }else{
+
+                                        }*/
+                                    });
                                 }
                             });
                             angular.forEach(hotel.PropertyInfo.RoomStays, function (rates, key) {
@@ -84,7 +131,14 @@ angular.module('Traveller')
                             "lowest_rate": hotel.LowestRate.LowestRate.value,
                             "total_recommendation": hotel.PropertyInfo.GuestRecommendations.totalRecommendations,
                             "total_rating_value": hotel.PropertyInfo.GuestRecommendations.OverallRecommendation.Rating.value,
-                            "rate" : t
+                            "rate" : t,
+                            "room_service" : room_service,
+                            "travel": travel,
+                            "restaurant" : restaurant,
+                            "parking" : parking,
+                            "laundry": laundry,
+                            "wi_fi" : internet_wifi,
+                            "business_facilities" : business_facilities
                         };
                         $scope.hotelResult.push(temp);
                         $scope.$emit('UNLOAD')
