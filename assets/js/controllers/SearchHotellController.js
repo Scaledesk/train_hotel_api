@@ -21,11 +21,6 @@ angular.module('Traveller')
         console.log($scope.check_in);
         console.log($scope.check_out);
         $scope.starRating = {
-            "a" : "",
-            "b" : "",
-            "c" : "",
-            "d" : "",
-            "e" : ""
         };
 
         var hotelRequest = '<MMTHotelSearchRequest><POS><Requestor type="B2C" idContext="AFF" id="AFF322603" channel="B2Cweb"/> <Source iSOCurrency="INR"/> </POS> <ResultTransformer> ' +
