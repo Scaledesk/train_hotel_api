@@ -18,7 +18,7 @@ $scope.fareClass ="";
         };
             var source = $routeParams.source;
             var destination = $routeParams.destination;
-            var journey_date = $routeParams.journey_date;
+        $scope.journey_date = $routeParams.journey_date;
             var no_of_passenger = $routeParams.no_of_passenger;
         angular.forEach($scope.master_stations, function(station, key) {
             if(station.code == source){
@@ -28,7 +28,7 @@ $scope.fareClass ="";
                 $scope.destination.selected = station;
             }
         });
-        $scope.journey_date =journey_date;
+        //$scope.journey_date =journey_date;
         $scope.no_of_passenger = no_of_passenger;
             $scope.results = [];
         $scope.sortType     = "duration";
@@ -51,7 +51,7 @@ $scope.fareClass ="";
         }*/
 
         $scope.$emit('LOAD')
-        TrainBetweenStation.get(source,destination,journey_date)
+        TrainBetweenStation.get(source,destination,$scope.journey_date)
              .success(function(data) {
              $scope.records = data.train;
                 $scope.total_train = $scope.records.length;
@@ -59,7 +59,7 @@ $scope.fareClass ="";
              angular.forEach($scope.records, function(record){
                  console.log(record);
              //var quota = "GN";
-             TrainBetweenStation.getFare(record.number,record.from.code,record.to.code,18,"GN",journey_date)
+             TrainBetweenStation.getFare(record.number,record.from.code,record.to.code,18,"GN",$scope.journey_date)
              .success(function(data) {
 
                      angular.forEach(data.fare, function(fare) {
@@ -76,7 +76,7 @@ $scope.fareClass ="";
                              "farePrice": fare.fare,
                              "arrival_time" : record.dest_arrival_time,
                              "departure_time" :record.src_departure_time,
-                             "journey_date" : journey_date,
+                             "journey_date" : $scope.journey_date,
                              "duration" : duration,
                              "no_of_passenger" : no_of_passenger
                          };

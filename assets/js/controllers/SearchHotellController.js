@@ -52,6 +52,11 @@ angular.module('Traveller')
                         var laundry = 'No';
                         var internet_wifi ='No';
                         var business_facilities = 'No';
+                        var spa_massage = 'No';
+                        var family = 'No';
+                        var sport = 'No';
+                        var gym = 'No';
+                        var swimming_pool = 'No';
                             angular.forEach(hotel.PropertyInfo.Facets, function (star, key) {
                                 if(star.group =='STAR_RATING'){
                                         s = star.FacetValue.value;
@@ -78,6 +83,21 @@ angular.module('Traveller')
                                         }
                                         if(a.value == 'Business Facilities'){
                                                     business_facilities = 'Yes';
+                                        }
+                                        if(a.value == 'Spa/Massage/Wellness'){
+                                            spa_massage = 'Yes';
+                                        }
+                                        if(a.value == 'Family/Child Friendly'){
+                                            family = 'Yes';
+                                        }
+                                        if(a.value == 'Sport'){
+                                            sport = 'Yes';
+                                        }
+                                        if(a.value == 'Gym'){
+                                            gym = 'Yes';
+                                        }
+                                        if(a.value == 'Swimming Pool'){
+                                            swimming_pool = 'Yes';
                                         }
 
                                     });
@@ -120,7 +140,12 @@ angular.module('Traveller')
                             "parking" : parking,
                             "laundry": laundry,
                             "wi_fi" : internet_wifi,
-                            "business_facilities" : business_facilities
+                            "business_facilities" : business_facilities,
+                            "family" : family,
+                            "spa_massage": spa_massage,
+                            "sport": sport,
+                            "gym" : gym,
+                            "swimming_pool": swimming_pool
                         };
                         $scope.hotelResult.push(temp);
                         $scope.$emit('UNLOAD')
