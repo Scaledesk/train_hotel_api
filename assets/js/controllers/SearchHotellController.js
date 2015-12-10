@@ -45,13 +45,13 @@ angular.module('Traveller')
                     $scope.hotels = data;
                     angular.forEach($scope.hotels.data.HotelSearchResults.Hotels, function (hotel, key) {
                         var mVal = '';
-                        var room_service = '';
-                        var travel = '';
-                        var restaurant = '';
-                        var parking = '';
-                        var laundry = '';
-                        var internet_wifi ='';
-                        var business_facilities = '';
+                        var room_service = 'No';
+                        var travel = 'No';
+                        var restaurant = 'No';
+                        var parking = 'No';
+                        var laundry = 'No';
+                        var internet_wifi ='No';
+                        var business_facilities = 'No';
                             angular.forEach(hotel.PropertyInfo.Facets, function (star, key) {
                                 if(star.group =='STAR_RATING'){
                                         s = star.FacetValue.value;
@@ -60,44 +60,26 @@ angular.module('Traveller')
                                     angular.forEach(star.FacetValues, function (a, key) {
                                             if(a.value == 'Room Service'){
                                                 room_service = "Yes";
-                                            }else{
-                                                room_service = "No";
                                             }
                                         if(a.value == 'Travel & Transfers'){
                                                     travel = 'Yes';
-                                        }else{
-                                            travel = 'No';
                                         }
                                         if(a.value == 'Restaurant/Bar'){
                                                     restaurant = 'Yes';
-                                        }else{
-                                            restaurant = 'No';
                                         }
                                         if(a.value == 'Parking'){
                                                 parking = 'Yes';
-                                        }else{
-                                            parking = 'No';
                                         }
                                         if(a.value == 'Laundry Services'){
                                                        laundry = 'Yes';
-                                        }else{
-                                            laundry = 'No';
                                         }
                                         if(a.value == 'Internet/Wi-Fi'){
                                                 internet_wifi = 'Yes';
-                                        }else{
-                                            internet_wifi = 'No';
                                         }
                                         if(a.value == 'Business Facilities'){
                                                     business_facilities = 'Yes';
-                                        }else{
-                                            business_facilities = 'No';
                                         }
-                                        /*if(a.value == ''){
 
-                                        }else{
-
-                                        }*/
                                     });
                                 }
                             });

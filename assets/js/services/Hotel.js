@@ -7,10 +7,39 @@ angular.module('Traveller').factory('Hotel', function($http) {
                 headers: {
                     'Content-Type': 'application/xml',
                     'Authorization':'Basic QUZGMzIyNjAzOmljZWNyZWFt'
+                   // 'Origin':'http://evil.com/'
+                    /*'Access-Control-Allow-Origin':'*',
+                    'Access-Control-Allow-Methods':['OPTIONS', 'GET', 'POST'],
+                    'Access-Control-Allow-Headers': 'Content-Type'*/
                 },
                 data: dt
             });
         },
+
+        /*Accept:application/json, text/plain, *!/!*
+     Accept-Encoding:gzip, deflate
+     Accept-Language:en-US,en;q=0.8
+     Authorization:Basic QUZGMzIyNjAzOmljZWNyZWFt
+     Connection:keep-alive
+     Content-Length:1158
+     Content-Type:application/xml
+     Host:apim-gateway.mmtcloud.com
+     Origin:http://evil.com/
+     Referer:http://localhost:3000/
+     User-Agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.73 Safari/537.36*/
+            /*Accept:*!/!*
+     Accept-Encoding:gzip, deflate, sdch
+     Accept-Language:en-US,en;q=0.8
+     Access-Control-Request-Headers:accept, authorization, content-type
+     Access-Control-Request-Method:POST
+     Cache-Control:max-age=0
+     Connection:keep-alive
+     Host:apim-gateway.mmtcloud.com
+     Origin:http://localhost:3000
+     Referer:http://localhost:3000/
+     User-Agent:Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.73 Safari/537.36*/
+
+
 
         getCountry : function(countryData) {
             return $http({

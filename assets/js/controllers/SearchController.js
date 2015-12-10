@@ -86,9 +86,11 @@ $scope.fareClass ="";
                      });
              });
              });
+                $scope.$emit('UNLOAD')
              })
              .error(function(data) {
              console.log(data);
+                $scope.$emit('UNLOAD')
              $location.path("/error");
              });
 

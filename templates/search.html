@@ -1,16 +1,6 @@
 
 <div class="container">
-    <ul class="breadcrumb">
-        <li><a href="index.html">Home</a>
-        </li>
-        <li><a href="#">United States</a>
-        </li>
-        <li><a href="#">New York (NY)</a>
-        </li>
-        <li><a href="#">New York City</a>
-        </li>
-        <li class="active">New York City Flights</li>
-    </ul>
+
     <div class="mfp-with-anim mfp-hide mfp-dialog mfp-search-dialog" id="search-dialog">
         <h3>Search for Flight</h3>
         <form>
@@ -430,7 +420,7 @@
                         <div class="booking-item-container">
                             <!--.type1 | filter:checkboxModel.type2 | filter:checkboxModel.type3 | filter:checkboxModel.type4-->
                             <div class="booking-item">
-                                <div class="row" dir-paginate="result in results | orderBy:sortType:sortReverse | filter:checkboxModel | itemsPerPage: 10">
+                                <div class="row" dir-paginate="result in results | orderBy:sortType:sortReverse | filter:checkboxModel | itemsPerPage: 10" pagination-id="train">
                                     <div class="col-md-2">
                                         <div class="booking-item-airline-logo">
                                             <img src="assets/theme/img/242px-IRCTC_Logo.svg.png" alt="Image Alternative text" title="Image Title" />
@@ -465,7 +455,7 @@
 
                         <br/><br/>
                         <div>
-                            <dir-pagination-controls template-url="assets/js/includes/angular-utils-pagination/dirPagination.tpl.html"></dir-pagination-controls>
+                            <dir-pagination-controls template-url="assets/js/includes/angular-utils-pagination/dirPagination.tpl.html" pagination-id="train"></dir-pagination-controls>
                             </div>
 
 
