@@ -260,10 +260,7 @@
                                     <label>
                                         <input class="i-check" type="checkbox" ng-model='starRating.parking' ng-true-value="'Yes'" ng-false-value="''" />Parking</label>
                                 </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input class="i-check" type="checkbox" ng-model='starRating.family' ng-true-value="'Yes'" ng-false-value="''" />Family/Child Friendly</label>
-                                </div>
+
                                 <!--<div class="checkbox">
                                     <label>
                                         <input class="i-check" type="checkbox" />Airport Shuttle (137)</label>
@@ -286,14 +283,8 @@
                                 </div>-->
 
 
-                                <div class="checkbox">
-                                    <label>
-                                        <input class="i-check" type="checkbox" ng-model='starRating.spa_massage' ng-true-value="'Yes'" ng-false-value="''" />Spa/Massage</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input class="i-check" type="checkbox" ng-model='starRating.sport' ng-true-value="'Yes'" ng-false-value="''" />Sport</label>
-                                </div>
+
+
                                 <div class="checkbox">
                                     <label>
                                         <input class="i-check" type="checkbox" ng-model='starRating.gym' ng-true-value="'Yes'" ng-false-value="''" />Gym</label>
@@ -324,10 +315,7 @@
                                     <label>
                                         <input class="i-check" type="checkbox" ng-model='starRating.room_service' ng-true-value="'Yes'" ng-false-value="''" />Room Service</label>
                                 </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input class="i-check" type="checkbox" ng-model='starRating.business_facilities' ng-true-value="'Yes'" ng-false-value="''" />Business Facilities</label>
-                                </div>
+
                                 <div class="checkbox">
                                     <label>
                                         <input class="i-check" type="checkbox" ng-model='starRating.restaurant' ng-true-value="'Yes'" ng-false-value="''" />Restaurant</label>
@@ -378,31 +366,28 @@
                             </li>
                             <li>
                                 <h5 class="booking-filters-title">Hotel Theme</h5>
+                                <!--<div class="checkbox">
+                                    <label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.spa_massage' ng-true-value="'Yes'" ng-false-value="''" />Romance / Honeymoon </label>
+                                </div>-->
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" />Romance / Honeymoon </label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.spa_massage' ng-true-value="'Yes'" ng-false-value="''"/>Spa / Relaxation</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" />Spa / Relaxation</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.family' ng-true-value="'Yes'" ng-false-value="''"/>Family</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" />Family</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.sport' ng-true-value="'Yes'" ng-false-value="''"/>Golf / Sport</label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input class="i-check" type="checkbox" />Budget / Backpacker</label>
+                                        <input class="i-check" type="checkbox" ng-model='starRating.business_facilities' ng-true-value="'Yes'" ng-false-value="''"/>Business</label>
                                 </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input class="i-check" type="checkbox" />City Trip (53)</label>
-                                </div>
-                                <div class="checkbox">
-                                    <label>
-                                        <input class="i-check" type="checkbox" />Luxury (134)</label>
-                                </div>
-                                <div class="checkbox">
+
+                                <!--<div class="checkbox">
                                     <label>
                                         <input class="i-check" type="checkbox" />Design (80)</label>
                                 </div>
@@ -429,7 +414,7 @@
                                 <div class="checkbox">
                                     <label>
                                         <input class="i-check" type="checkbox" />Business (210)</label>
-                                </div>
+                                </div>-->
                             </li>
                         </ul>
                     </aside>
@@ -476,7 +461,7 @@
 -->
                         <!--(starRating.a || starRating.b || starRating.c || starRating.d || starRating.e)-->
 
-                        <li dir-paginate="hotel in hotelResult | filter: starRating:strict | itemsPerPage: 8" pagination-id="hotel">
+                        <li dir-paginate="hotel in hotelResult | filter: starRating:strict | itemsPerPage: 6" pagination-id="hotel">
                             <a class="booking-item" href="#">
                                 <div class="row">
                                     <div class="col-md-3">
